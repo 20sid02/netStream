@@ -1,7 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
-
+<div class="container mt-4">
+  <h2 class="mb-4">Browse Folders</h2>
+  
+  <div class="row">
+    {% for folder in folders %}
+    <div class="col-6 col-md-3 text-center mb-4">
+      <a href="{% url 'folder' folder %}" class="text-decoration-none text-dark">
+        <div class="p-3 rounded shadow-sm" style="transition: transform 0.2s ease, box-shadow 0.2s ease;">
+          <i class="bi bi-folder-fill text-warning" style="font-size: 3rem;"></i>
+          <p class="mt-2 mb-0 fw-semibold">{{ folder }}</p>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
